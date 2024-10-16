@@ -8,19 +8,20 @@ import messageRouter from "./router/messageRouter.js";
 import { errorMiddleware } from "./middlewares/error.js";
 import userRouter from "./router/userRouter.js"
 import appointmentRouter from "./router/appointmentRouter.js"
-
+// import cors from "cors"; 
 
 const app = express();
 
 config({ path: "./config/config.env"});
 
 //connecting fronted to backend using cors
-
+//origin is use to ensure the to merge connection between different ports
 app.use(
     cors({
 origin :[process.env.FRONTED_URL,process.env.DASHBOARD_URL], 
 methods: ["GET","POST","PUT","DELETE"],
 credentials:true,
+
     })
 );
 

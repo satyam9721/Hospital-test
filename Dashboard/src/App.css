@@ -1,0 +1,974 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background: #3939d9f2;
+  overflow-x: hidden;
+}
+.container {
+  padding: 0 100px;
+}
+@media (max-width: 700px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+.page {
+  background: #e5e5e5;
+  padding: 40px;
+  height: 100vh;
+  border-radius: 50px 0 0 50px;
+  transition: margin-left 0.3s ease-in-out;
+}
+/* Adjust page layout for responsiveness */
+@media (max-width: 1208px) {
+  .page {
+    margin-left: 0;
+    border-radius: 0;
+    padding: 40px 20px;
+  }
+}
+@media (max-width: 485px) {
+  .page {
+    padding: 20px;
+  }
+}
+@media (max-width: 460px) {
+  .logo {
+    width: 100%;
+  }
+}
+.form-title{
+  font-size: 1.75rem;
+  color: #111;
+  margin-bottom: 30px;
+}
+.form-component {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  min-height: 100vh;
+  background: #e5e5e5;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.form-component h2 {
+  color: gray;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+.form-component h4 {
+  color: gray;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.form-component p {
+  max-width: 750px;
+  color: gray;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.form-component form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 550px;
+}
+.add-admin-form form {
+  width: 80%;
+}
+.form-component p:first-child {
+  font-size: 28px;
+  font-weight: 700;
+  color: #370080a3;
+  margin-top: 30px;
+}
+.form-component form div {
+  display: flex;
+  gap: 30px;
+}
+.form-component form input,
+.form-component form select,
+.form-component form textarea {
+  flex: 1;
+  font-size: 24px;
+  padding: 10px 10px 10px 40px;
+  border-radius: 7px;
+  border: 1px solid gray;
+}
+.form-component button {
+  padding: 10px 35px;
+  color: #fff;
+  font-weight: 700;
+  width: fit-content;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  margin-bottom: 30px;
+  background: linear-gradient(140deg, #9083d5, #271776ca);
+}
+.form-component .wrapper {
+  display: flex;
+  gap: 50px;
+}
+.form-component .wrapper .banner {
+  flex: 1;
+}
+.form-component .wrapper .banner:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-component .wrapper .banner:last-child img {
+  max-width: 450px;
+}
+@media (max-width: 888px) {
+  .form-component {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .form-component form div {
+    flex-direction: column;
+  }
+}
+@media (max-width: 667px) {
+  .form-component form input,
+  .form-component form select,
+  .form-component form textarea {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .form-component form {
+    width: 100%;
+  }
+}
+@media (max-width: 485px) {
+  .add-admin-form {
+    padding: 30px 0;
+  }
+}
+
+/* General Styling */
+/* General Styling */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f2f5;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Banner Section */
+.banner {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* First Box (Doctor's Info) */
+.firstBox {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #6a82fb, #fc5c7d);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.firstBox:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.firstBox img {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 4px solid #fff;
+}
+
+.firstBox .content {
+  flex: 1;
+  color: white;
+}
+
+.firstBox .content div {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.firstBox .content div p {
+  margin-right: 10px;
+}
+
+.firstBox .content div h5 {
+  color: #ffeb3b;
+}
+
+.firstBox .content p {
+  font-size: 16px;
+}
+
+/* Second & Third Box (Stats) */
+.secondBox,
+.thirdBox {
+  flex: 1;
+  background-color: #ffeb3b;
+  color: #111;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.secondBox:hover,
+.thirdBox:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.secondBox p,
+.thirdBox p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.secondBox h3,
+.thirdBox h3 {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Appointments Section */
+.appointments-section {
+  height: auto;
+  background: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.appointments-section h5 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.appointments-section table {
+  width: 100%;
+  color: #111;
+  font-size: 18px;
+  border-collapse: collapse;
+}
+
+.appointments-section table th,
+.appointments-section table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.appointments-section table th {
+  background-color: #6a82fb;
+  color: white;
+}
+
+.appointments-section table tbody td svg {
+  font-size: 20px;
+}
+
+.appointments-section table tbody td .green {
+  color: #16a34a;
+}
+
+.appointments-section table tbody td .red {
+  color: #dc2626;
+}
+
+/* Select for Appointment Status */
+.appointments-section table select {
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: #f4f4f9;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.appointments-section table select:focus {
+  outline: none;
+}
+
+.appointments-section table .value-pending {
+  color: #eab308;
+}
+
+.appointments-section table .value-accepted {
+  color: #16a34a;
+}
+
+.appointments-section table .value-rejected {
+  color: #dc2626;
+}
+
+/* Responsive Design */
+@media (max-width: 1020px) {
+  .banner,
+  .appointments-section {
+    flex-wrap: wrap;
+    padding: 30px;
+  }
+
+  .firstBox,
+  .secondBox,
+  .thirdBox {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .firstBox {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .firstBox img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 620px) {
+  .firstBox .content {
+    text-align: center;
+  }
+
+  .firstBox .content div {
+    font-size: 24px;
+  }
+
+  .appointments-section table {
+    font-size: 16px;
+  }
+
+  .appointments-section h5 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 485px) {
+  .firstBox img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .appointments-section h5 {
+    font-size: 18px;
+  }
+
+  .appointments-section table th,
+  .appointments-section table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+
+
+/* Global Sidebar Styling */
+.sidebar {
+  position: fixed;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(145deg, #3f51b5, #1a237e);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  color: #fff;
+  padding: 70px 0;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.sidebar svg {
+  width: 50px;
+  height: 50px;
+  font-size: 34px;
+  transition: transform 0.3s ease, background 0.3s;
+}
+.sidebar svg:hover {
+  background: #fff;
+  color: #3f51b5;
+  border-radius: 12px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.sidebar .links {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.sidebar .links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.sidebar .links a:hover {
+  color: #ffeb3b;
+}
+
+/* Sidebar Mobile Menu Toggle (Hidden by default) */
+.wrapper {
+  display: none;
+}
+.wrapper .hamburger {
+  display: none;
+}
+
+/* Mobile and Tablet Responsive */
+@media (max-width: 1208px) {
+  .sidebar {
+    background: #3f51b5;
+    transform: translateX(-120%);
+    width: 120px;
+    box-shadow: none;
+  }
+  .sidebar.show {
+    transform: translateX(0);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.4);
+  }
+  .wrapper {
+    display: block;
+    position: fixed;
+    top: 30px;
+    left: 40px;
+    font-size: 34px;
+    background: #3f51b5;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    cursor: pointer;
+  }
+  .wrapper .hamburger {
+    display: block;
+  }
+}
+@media (max-width: 485px) {
+  .sidebar {
+    width: 80px;
+    padding: 40px 0;
+  }
+  .sidebar.show {
+    width: 80px;
+  }
+  .sidebar svg {
+    width: 40px;
+    height: 40px;
+  }
+  .wrapper {
+    left: 20px;
+    height: 35px;
+    width: 35px;
+  }
+  .sidebar .links {
+    gap: 20px;
+  }
+  .sidebar .links a {
+    font-size: 14px;
+  }
+}
+
+/* Hover Effect for Sidebar Links */
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.sidebar a:hover {
+  color: #ffeb3b;
+  transform: scale(1.05);
+}
+
+/* Hamburger Menu Style */
+.hamburger-icon {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+.hamburger-icon:before,
+.hamburger-icon:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+.hamburger-icon:before {
+  top: -10px;
+}
+.hamburger-icon:after {
+  bottom: -10px;
+}
+
+
+/* doctor data displaying styling */
+.doctors {
+  padding: 0 20px; /* Added padding for left and right margins */
+}
+
+.doctors h1 {
+  color: #3939d9f2;
+  margin-bottom: 30px;
+  font-size: 2.5rem; /* Slightly larger font for a more prominent heading */
+  text-align: center; /* Center-align heading for better aesthetics */
+  letter-spacing: 1.5px; /* Added spacing for a more stylish look */
+}
+
+.doctors .banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-gap: 25px; /* Increased gap for better spacing */
+  justify-content: center; /* Ensure cards are centered */
+}
+
+.doctors .banner .card {
+  background: #f9f9f9; /* Subtle light gray background for card */
+  border-radius: 15px; /* More rounded corners */
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+  transition: transform 0.3s ease-in-out;
+  text-align: center; /* Center-align content */
+}
+
+.doctors .banner .card:hover {
+  transform: translateY(-10px); /* Hover effect to lift the card */
+}
+
+.doctors .banner .card img {
+  width: 230px;
+  height: 250px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border: 4px solid #3939d9f2; /* Border to make image stand out */
+}
+
+.doctors .banner .card h4 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 15px;
+  margin-left: 25px;
+  font-weight: 600;
+}
+
+.doctors .banner .card div {
+  width: 100%;
+  font-size: 14px; /* Smaller font size for better readability */
+}
+
+.doctors .banner .card div p {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #3939d9f2;
+}
+
+.doctors .banner .card div p span {
+  font-weight: 500;
+  color: #555;
+}
+
+/* Stylish labels for fields */
+.doctors .banner .card div .label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.doctors .banner .card div p span {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .doctors {
+    padding: 0 15px;
+  }
+
+  .doctors .banner .card {
+    padding: 20px;
+  }
+
+  .doctors .banner .card img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .doctors .banner .card h4 {
+    font-size: 22px;
+  }
+
+  .doctors .banner .card div {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 350px) {
+  .doctors {
+    padding: 0 10px;
+  }
+
+  .doctors .banner {
+    grid-template-columns: 1fr; /* Stacking cards for small screens */
+    grid-gap: 20px;
+  }
+
+  .doctors .banner .card img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .doctors .banner .card h4 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 350px) {
+  .doctors .banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-gap: 20px;
+  }
+}
+
+
+
+
+
+
+/* for messages dashboard styliying */
+.messages {
+  padding: 0 20px; /* Padding to avoid content being cut off from left and right */
+}
+
+.messages h1 {
+  color: #3939d9f2;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-align: center; /* Center-align heading for better appearance */
+  letter-spacing: 1.5px; /* Added letter spacing for a modern look */
+}
+
+.messages .banner {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Increased gap for better spacing between cards */
+}
+
+.messages .banner .card {
+  background: #f9f9f9; /* Subtle gray background for card */
+  border-radius: 15px; /* Rounded corners */
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  animation: fadeIn 1s ease; /* Animation for entry */
+  position: relative;
+  display: flex; /* Added flexbox for centering content */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+}
+
+.messages .banner .card:hover {
+  transform: translateY(-10px); /* Lifting effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.messages .banner .card div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+  text-align: center; /* Center-align the text for larger screens */
+}
+
+/* Stylish labels for fields */
+.messages .banner .card div .label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.messages .banner .card div p {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #3939d9f2;
+}
+
+.messages .banner .card div p span {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Stylish hover effect for fields */
+.messages .banner .card div p:hover span {
+  color: #555;
+  text-decoration: underline;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Center the text for larger screens */
+@media (min-width: 1024px) {
+  .messages .banner .card {
+    width: 50%; /* Adjust the card width for larger screens */
+    margin: 0 auto; /* Center the card horizontally */
+  }
+
+  .messages .banner .card div {
+    text-align: center; /* Center the text content */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .messages {
+    padding: 0 15px;
+  }
+
+  .messages .banner .card {
+    padding: 20px;
+  }
+
+  .messages .banner .card div {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 350px) {
+  .messages {
+    padding: 0 10px;
+  }
+
+  .messages .banner .card div {
+    font-size: 14px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* new doctor form filling styling */
+.add-doctor-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  background: #f5f7fa;
+}
+
+.add-doctor-form form {
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInForm 1s ease-in-out;
+}
+
+.add-doctor-form form .first-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-doctor-form form .avatar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-doctor-form form .avatar-wrapper img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2px solid #9083d5;
+  transition: transform 0.3s ease;
+}
+
+.add-doctor-form form .avatar-wrapper img:hover {
+  transform: scale(1.05);
+}
+
+.add-doctor-form form .avatar-wrapper input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.input-fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.input-fields-wrapper input,
+.input-fields-wrapper select,
+.input-fields-wrapper textarea {
+  width: 100%;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-fields-wrapper input:focus,
+.input-fields-wrapper select:focus,
+.input-fields-wrapper textarea:focus {
+  border-color: #9083d5;
+  box-shadow: 0 0 10px rgba(144, 131, 213, 0.3);
+}
+
+.add-doctor-form button {
+  padding: 12px 35px;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  margin-top: 30px;
+  background: linear-gradient(140deg, #9083d5, #271776ca);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.add-doctor-form button:hover {
+  background: linear-gradient(140deg, #7261ba, #150f6b);
+  transform: translateY(-3px);
+}
+
+.add-doctor-form button:active {
+  transform: translateY(1px);
+}
+
+/* Styles for screens larger than 887px wide and 260px tall */
+@media (min-width: 888px) and (min-height: 261px) {
+  .input-fields-wrapper {
+    align-items: center;
+  }
+}
+
+/* Animation for form entry */
+@keyframes fadeInForm {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+input[type="date"]:before {
+  content: attr(placeholder);
+  color: #444;
+  margin-right: 0.5em;
+}
+input[type="time"]:before {
+  content: attr(placeholder);
+  color: #444;
+  margin-right: 0.5em;
+}

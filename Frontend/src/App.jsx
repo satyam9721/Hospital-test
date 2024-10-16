@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import { Context } from "./main";
 import axios from "axios";
+import Footer from "./components/Footer";
 
 const App = () => {
   //getting user from main.jsx file
@@ -19,6 +20,7 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
+        //here modifyed get to post
         const response = await axios.get(
           "http://localhost:4000/api/v1/user/patient/me",
           { withCredentials: true }
@@ -44,7 +46,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-
+       <Footer/>
         <ToastContainer position="top-center" />
       </Router>
     </>

@@ -4,6 +4,8 @@ import { Message } from "../models/messageSchema.js"
 import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 import ErrorHandler  from "../middlewares/error.js";
 
+
+
 //message controller without catchAsyncErrors middleware
 export const sendMessage= catchAsyncErrors(async (req,res,next) =>{
     const {firstname,lastname,email,phone,message}=req.body;
@@ -19,10 +21,10 @@ export const sendMessage= catchAsyncErrors(async (req,res,next) =>{
         });
 
     
-})
+});
+
 
 //to get Allmessages, this methods only work when patients and admin login
-
 export const getAllmessages = catchAsyncErrors(async(req,res,next)=>{
 const messages = await Message.find();
 res.status(200).json({

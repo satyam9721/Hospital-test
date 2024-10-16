@@ -163,8 +163,8 @@ export const addnewDoctor = catchAsyncErrors(async (req, res, next) => {
     if (!allowedFormats.includes(docAvatar.mimetype)) {
         return next(new ErrorHandler("File format not supported!", 400));
     }
-
-const {firstname,lastname,email,phone,password,gender,dob,nic,role,doctorDepartment}=req.body;
+//role variable is removed
+const {firstname,lastname,email,phone,password,gender,dob,nic,doctorDepartment}=req.body;
 
 if(!firstname||
     !lastname||
@@ -174,7 +174,7 @@ if(!firstname||
     !gender||
     !dob||
     !nic||
-    !role||
+    // !role||
     !doctorDepartment
 ){
     return  next(new ErrorHandler("Please fill Required Doctor Details!",400));
@@ -198,7 +198,7 @@ console.error("Cloudinary Error:",
   cloudinaryResponse.error || "Unknown cloudinary Error"  
 );
 }
-//creating doctor deatils
+//creating doctor deatils and role is commented.
 const doctor = await User.create({
     firstname,
     lastname,
@@ -208,7 +208,7 @@ const doctor = await User.create({
     gender,
     dob,
     nic,
-    role,
+    // role,
     doctorDepartment,
     role : "Doctor",
     docAvatar:{

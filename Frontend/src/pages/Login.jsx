@@ -1,10 +1,15 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../main";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { json, Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+
+
+////not redirecting home page also not showing logout button
+
 const Login = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+  //const [isAuthenticated, setIsAuthenticated] = useState(false);  //by me, redirecting but not showing logout button
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,6 +18,7 @@ const Login = () => {
   const navigateTo = useNavigate();
 
   const handleLogin = async (e) => {
+    
     e.preventDefault();
     try {
       const response = await axios.post(
@@ -23,10 +29,28 @@ const Login = () => {
           headers: { "Content-Type": "application/json" },
         }
       );
-      toast.success(response.data.message);
-      setIsAuthenticated(true);
-      navigateTo("/");
+      console.log("Login successful:", response.data.message);
+  // Get the token from response
+  const token = response.data.token;
+  if(token){
+    localStorage.setItem("authToken",token);
+
+    localStorage.setItem("user",JSON.stringify(response.data.user));
+    setIsAuthenticated(true);
+    toast.success(response.data.message);
+    navigateTo("/");
+  }else{
+    toast.error("Token not received from the server.");
+  }
+
+
+      // toast.success(response.data.message);
+      // setIsAuthenticated(true);
+      
+      // navigateTo("/");
+     
     } catch (error) {
+      console.error("Login error:", error);
       toast.error(error.response.data.message);
     }
   };

@@ -90,6 +90,13 @@ export const postAppointment = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+
+
+
+
+
+
+//to get all appointment when admin is authencated
 export const getAllAppointments = catchAsyncErrors(async (req, res, next) => {
   const appointments = await Appointment.find();
   res.status(200).json({
@@ -97,6 +104,34 @@ export const getAllAppointments = catchAsyncErrors(async (req, res, next) => {
     appointments,
   });
 });
+
+// export const getAllAppointments = catchAsyncErrors(async (req, res, next) => {
+//   // Ensure only admin can access this route
+//   if (req.user.role !== "Admin") {
+//     return next(new ErrorHandler("Oops! Admin Not Authenticated!!", 403));
+//   }
+
+//   // Fetch all appointments, optionally populate doctor and patient details
+//   const appointments = await Appointment.find()
+//     .populate("doctorId", "firstname lastname")
+//     .populate("patientsId", "firstname lastname");
+
+//   res.status(200).json({
+//     success: true,
+//     appointments,
+//   });
+// });
+
+
+
+
+
+
+
+
+
+
+
 
 //to update the previous appointment
 export const updateAppointmentStatus = catchAsyncErrors(
@@ -116,7 +151,7 @@ export const updateAppointmentStatus = catchAsyncErrors(
 
     res.status(200).json({
       success: true,
-      message: "Appointment Status Updated !",
+      message: "Appointment Status Updated successfully !",
       appointment,
     });
   }
@@ -135,7 +170,7 @@ if(!appointment){
 await appointment.deleteOne();
 res.status(200).json({
     success: true,
-    message: "Appointment Deleted",
+    message: "Appointment Deleted successfully",
 })
 })
 
