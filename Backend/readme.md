@@ -1,4 +1,4 @@
-https://github.com/Zeeshu911/MERN-Stack-Hospital-Management-System-Web-Application
+
 deploy servre ec2 = https://www.youtube.com/watch?v=cgWXQqL-ZU8
 
 start server> npm run dev
